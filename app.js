@@ -177,7 +177,7 @@ app.get('/admin/documents', async (req, res) => {
     }
   } catch (error) {
     console.error('Error fetching documents from MongoDB:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ err: 'Internal Server Error' ,error});
   } finally {
     if (client) {
       await client.close();
